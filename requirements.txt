@@ -1,0 +1,4 @@
+requests
+elevenlabs
+pyaudio
+aiohttp
