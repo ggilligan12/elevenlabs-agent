@@ -7,7 +7,7 @@ Thrown together in an evening. Run the `chat.py` script to get an interactive te
 ### Quickstart
 
 ```
-python3 venv create -m elevenlabs_agent_venv
+python3 -m venv elevenlabs_agent_venv
 ```
 ```
 source elevenlabs_agent_venv/bin/activate
