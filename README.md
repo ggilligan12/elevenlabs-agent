@@ -6,10 +6,10 @@ Thrown together in an evening. Run the `chat.py` script to get an interactive te
 
 ### Client Tools
 
-These spec for these is defined and referenced in the ElevenLabs Agent, however the actual functionality and runtime happens locally. The code that ran to make API requests to Perplexity for instance relied on an API key set as an env var in my terminal.
-
 - Perplexity AI Completions endpoint (API key needed)
 - `crt.sh` Certificate Transparency lookup
+
+The spec for these is defined and referenced in the ElevenLabs Agent, however the actual functionality and runtime happens locally. The code that ran to make API requests to Perplexity for instance relied on an API key set as an env var in my terminal.
 
 ### Quickstart
 
