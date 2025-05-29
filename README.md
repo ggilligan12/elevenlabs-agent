@@ -4,6 +4,13 @@
 
 Thrown together in an evening. Run the `chat.py` script to get an interactive terminal where you can talk to an ElevenLabs agent.
 
+### Client Tools
+
+These spec for these is defined and referenced in the ElevenLabs Agent, however the actual functionality and runtime happens locally. The code that ran to make API requests to Perplexity for instance relied on an API key set as an env var in my terminal.
+
+- Perplexity AI Completions endpoint (API key needed)
+- `crt.sh` Certificate Transparency lookup
+
 ### Quickstart
 
 ```
@@ -18,12 +25,6 @@ pip install requirements.txt
 ```
 python chat.py
 ```
-
-### Tools
-
-Via natural language conversation you have an agent that can do agentic web search with Perplexity and Certificate Transparency lookups via `crt.sh`. I would have done VirusTotal as well but it's time for bed.
-
-A few things to note. Won't necessarily work immediately out the box. You'll need API keys for ElevenLabs, and if you want to use the Perplexity API tool you'll need one for that as well. Need to be set as env vars in the env you run
 
 ### Agent Configuration
 
