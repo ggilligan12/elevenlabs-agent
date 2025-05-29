@@ -41,9 +41,9 @@ conversation = Conversation(
     callback_user_transcript=lambda transcript: pretty_print(f"User: {transcript}")
 )
 
-print("Starting conversation. Press Ctrl+C to exit.")
+print(Fore.WHITE + "Starting conversation. Press Ctrl+C to exit.")
 conversation.start_session()
 # Kill chat on Ctrl+C
 signal.signal(signal.SIGINT, lambda sig, frame: conversation.end_session())
 conversation_id = conversation.wait_for_session_end()
-print(f"Conversation ID: {conversation_id}")
+print(Fore.WHITE + f"Conversation ID: {conversation_id}")
