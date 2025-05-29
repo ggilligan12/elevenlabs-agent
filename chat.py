@@ -3,6 +3,7 @@ from tools.crt_sh import crt_sh_lookup
 
 import signal
 import os
+from colorama import Fore
 
 from elevenlabs.client import ElevenLabs
 from elevenlabs.conversational_ai.conversation import Conversation, ClientTools
@@ -16,6 +17,14 @@ ELEVENLABS_API_KEY = os.environ["ELEVENLABS_API_KEY"]
 # choice just set the env var :p
 AGENT_ID = os.environ["AGENT_ID"]
 
+def pretty_print(line: str):
+    if line.startswith('Agent:'):
+        print(Fore.WHITE + 'Agent: ', end='')
+        print(Fore.GREEN + line.lstrip('Agent: '))
+    if line.startswith('User:'):
+        print(Fore.WHITE + 'User: ', end='')
+        print(Fore.CYAN + line.lstrip('User: '))
+
 # Tool registration
 client_tools = ClientTools()
 client_tools.register("askPerplexity", ask_perplexity, is_async=True)
@@ -27,9 +36,9 @@ conversation = Conversation(
     requires_auth=bool(ELEVENLABS_API_KEY),
     audio_interface=DefaultAudioInterface(),
     client_tools=client_tools,
-    callback_agent_response=lambda response: print(f"Agent: {response}"),
-    callback_agent_response_correction=lambda original, corrected: print(f"Agent: {original} -> {corrected}"),
-    callback_user_transcript=lambda transcript: print(f"User: {transcript}")
+    callback_agent_response=lambda response: pretty_print(f"Agent: {response}"),
+    callback_agent_response_correction=lambda original, corrected: pretty_print(f"Agent: {original} -> {corrected}"),
+    callback_user_transcript=lambda transcript: pretty_print(f"User: {transcript}")
 )
 
 print("Starting conversation. Press Ctrl+C to exit.")
