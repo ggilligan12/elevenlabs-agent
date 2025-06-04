@@ -1,10 +1,12 @@
 import os
 import aiohttp
 import asyncio
+from colorama import Fore
 
 PERPLEXITY_API_KEY = os.environ["PERPLEXITY_API_KEY"]
 
 async def ask_perplexity(parameters: dict):
+    print(Fore.MAGENTA + '[TOOL EXECUTION] askPerplexity')
     question = parameters.get("input")
     if not question:
         return "No question provided to Perplexity tool."

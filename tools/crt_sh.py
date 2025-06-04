@@ -1,6 +1,7 @@
 import aiohttp
 import asyncio
 import json
+from colorama import Fore
 
 async def crt_sh_lookup(parameters: dict) -> str:
     """
@@ -13,6 +14,7 @@ async def crt_sh_lookup(parameters: dict) -> str:
     Returns:
         str: A JSON string of the lookup results from crt.sh, or an error message.
     """
+    print(Fore.MAGENTA + '[TOOL EXECUTION] crtShLookup')
     query = parameters.get("query")
     if not query:
         return "No query provided for crt.sh lookup. Please provide a 'query' parameter."
